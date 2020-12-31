@@ -29,6 +29,7 @@ Please use this format:
 `
 {
 "seasonNumber": "",
+
 "episodeNumber": "",
 
 "references": [{}]
@@ -42,22 +43,34 @@ The references array
 "references" must be an object inside an array! Within that object, use the following keys in key/value pairs:
 
 `"subject": ""` - What is the subject matter of the reference? What are they talking about?
+
 `"timestamp": ""` - Timestamp of quote in the episode
+
 `"quote": ""` - Quote that contains the reference
+
 `"speaker": ""` - Who makes the reference?
+
 `"context": ""` - How does the quote come up? Give a brief description
+
 `"meaning": ""` - What does the reference mean? Why is it important here?
+
 `"screenshot": ""` - This is the bonus one! Take a screenshot of the moment the reference is made, upload it online, and provide the URL here!
 
 Here is an example:
 
 `{
   "subject": "Jack Kerouac",
+
   "timestamp": "1:27",
+
   "quote": "You're a regular Jack Kerouac.",
+
   "speaker": "Lorelai",
+
   "context": "Lorelai is approached by a stranger who flirts with her at Luke's diner. He tells her that he is just passing by Stars Hollow to Hartford, and this is Lorelai's response",
+
   "meaning": "Jack Kerouac was famous for his travels, which lead to his novel 'On The Road'.",
+
   "screenshot": "https://some-picture-hosting-website.com/image"
 }`
 
