@@ -1,0 +1,175 @@
+{
+    "episodes": [
+        {
+            "seasonNumber": "1",
+            "episodeNumber": "1",
+            "name": "Pilot",
+            "references": [
+                {
+                    "id": 1,
+                    "subject": "Jack Kerouac",
+                    "timestamp": "1:27",
+                    "quote": "You're a regular Jack Kerouac.",
+                    "speaker": "Lorelai",
+                    "context": "Lorelai is approached by a stranger who flirts with her at Luke's diner. He tells her that he is just passing by Stars Hollow to Hartford, and this is Lorelai's response",
+                    "meaning": "Jack Kerouac was famous for his travels, which lead to his novel 'On The Road'.",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 2,
+                    "subject": "RuPaul",
+                    "timestamp": "2:14",
+                    "quote": "God, RuPaul doesn't need this much makeup.",
+                    "speaker": "Rory",
+                    "context": "Rory enters Lukes and sits by Lorelai, who asks her what she needs. Rory replies 'lip gloss'. Lorelai proceeds to pull out a remarkable variety of makeup out of her purse, and this is Rory's response",
+                    "meaning": "RuPaul is a legendary drag queen, who presumably would use a lot of makeup!",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 3,
+                    "subject": "Officer Krupke",
+                    "timestamp": "2:33",
+                    "quote": "Look, Officer Krupke. She's right at that table, right over there.",
+                    "speaker": "Lorelai",
+                    "context": "Lorelai walks to the counter at Luke's with an empty mug to coffee for Rory. Luke presumes that Lorelai is just looking for a refill, and gives her a look of disapproval. Lorelai defends herself, saying that the coffee is for Rory, and uses this line before gesturing to Rory who is behind her",
+                    "meaning": "In Leonard Bernstein's 'West Side Story', Officer Krupke polices the neighbourhood and is famously lampooned in the song 'Gee Officer Krupke'. Lorelai playfully makes fun of Luke's 'policing' her coffee intake by refering to him as Krupke",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 4,
+                    "subject": "Eminem",
+                    "timestamp": "7:35",
+                    "quote": "Rory, if my parents still get upset over the obscene portion size of American food, I seriously doubt I'm gonna make any inroads with Eminem.",
+                    "speaker": "Lane",
+                    "context": "Rory and Lane are walking to school. Lane puts a Woodstock shirt on after leaving the house, implying that her parents are strict and would not let her leave the house wearing it. Rory, concerned for Lane's personal freedom, asks Lane if she will ever tell her parents that she 'listens to evil rock music', and this is Lane's response",
+                    "meaning": "Lane reveals how strict her parents are here, and creates a dichotomy between the traditional asian culture of her parents and the American culture that she subscribes to via music. Eminem, a rapper known to make music with dark and often violent subject matter, here is used as the far end of this perceived spectrum, and Lane is careful not to rock the boat with her parents by revealing her musical tastes.",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 5,
+                    "subject": "Mark Twain",
+                    "timestamp": "10:43",
+                    "quote": "Oh, well, there's no way Mark Twain can compete with that.",
+                    "speaker": "Lane",
+                    "context": "Rory and Lane are walking home from school, presumably talking about the lip gloss that Lorelai lent Rory earlier. Rory commments that it 'smelled like bubble gum when it dried', and this is Lane's repsonse.",
+                    "meaning": "This refers to Mark Twain, but more specifically Tom Sawyer of the novel of the same name. In the novel, the cunning Tom is able to pass his punishment of painting a fence to the other children. He is so deceptive that the other children not only agree to it, but also give him an apple for the opportunity. With this reference, Lane not only creates a parallel between the drying of both lip gloss and Tom's fence, but also the successful outcomes of both events",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 6,
+                    "subject": "Britney Spears",
+                    "timestamp": "14:10",
+                    "quote": "I'm gonna be in a Britney Spears video?",
+                    "speaker": "Rory",
+                    "context": "At the kitchen of the Independence Inn, Lorelai shares the news of Rory's acceptance into Chilton, a prestigious private school, with Sookie. Rory enters, and Lorelai gives her the box that came with the acceptance letter before telling Rory the news as well. Rory pulls a plaid skirt out of the box, not knowing that it is the Chilton uniform, and expresses her confusion with this question.",
+                    "meaning": "This is an ironic reference to the music video of Britney Spears' song '... Baby One More Time', where Britney famously dances through the halls of a school in a similar skirt.",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 7,
+                    "subject": "Protestants",
+                    "timestamp": "14:33",
+                    "quote": "I'll make cookies. Protestants love oatmeal.",
+                    "speaker": "Sookie",
+                    "context": "Rory revels in the news of her acceptance, and Sookie offers to celebrate this moment by making cookies.",
+                    "meaning": "Meaning Unknown. It is not clear how Protestantism ties in with Rory going to Chilton- perhaps Chilton is a Protestant private school? Could the oatmeal be an allusion to Quaker Oats, as the Quakers are a branch of Protestantism?",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 8,
+                    "subject": "Stephen King",
+                    "timestamp": "17:20",
+                    "quote": "Sookie, there are several chapters from a Stephen King novel I'd reenact before I'd resort to that option.",
+                    "speaker": "Lorelai",
+                    "context": "After a conversation with a representative of Chilton, Lorelai realizes she does not have the funds to pay for Rory's tuition. Sookie suggests that Lorelai reconnect with her wealthy parents for help, and Lorelai expresses her aversion with this line",
+                    "meaning": "Stephen King is an author also known as the 'King of Horror', and here Lorelai invokes King and his work to hyperbolize her disgust at asking her parents for help",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 9,
+                    "subject": "Zsa-Zsa Gabor",
+                    "timestamp": "18:01",
+                    "quote": "At Zsa Zsa Gabor's house.",
+                    "speaker": "Lorelai",
+                    "context": "At Lorelai's house. Sookie is planning dinner in the background, and asks Lorelai for paté, and receives this response",
+                    "meaning": "Lorelai's culinary ineptitude is an ongoing gag in the series, and Sookie's request for something as extravagant as paté returns an allusion to the glamourous Zsa-Zsa Gabor, an actress/socialite in her prime in the 50s.",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 10,
+                    "subject": "Ruth Gordon",
+                    "timestamp": "23:06",
+                    "quote": "God! You're like Ruth Gordon just standing there with a tannis root. Make a noise.",
+                    "speaker": "Rory",
+                    "context": "Rory drops her schoolbooks in the halls of Stars Hollow High. While kneeling down to pick them up, she is startled by Dean who just stands there, and says this to him.",
+                    "meaning": "Ruth Gordon is an actress in the movie 'Rosemary's Baby'. Ruth plays Minnie Castavet, Rosemary's lurking, cult-leader neighbour, who offers Rosemary a necklace with tannis root, which she claims brings good luck (though tannis root has a more sinister history as a witches' herb). With this line, Rory reveals that she recognizes Dean as the figure who was watching her and Lane at the park earlier. To Rory's surprise, Dean understands the reference and proceeds to compliment her taste in movies, a move that turns him from an unwanted lurker (like Minnie in 'Rosemary's Baby') to Rory's love interest.",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 11,
+                    "subject": "Florence Griffith Joyner, aka Flo Jo",
+                    "timestamp": "30:08",
+                    "quote": "Oh, you're gonna have to walk faster than that. You're gonna have to turn into friggin' Flo Jo to get away from me.",
+                    "speaker": "Lorelai",
+                    "context": "Earlier in the episode, Rory had directed Dean to Ms. Patty to find work. In this scene, Lorelai and Rory walk by Ms. Patty's dance studio, and Ms. Patty informs Rory that she has found Dean work at Doose's Market, and also compliments Rory on her taste in boys. Lorelai's maternal instinct kicks in and Rory quickly walks away from her mother. Lorelai calls after Rory with this line",
+                    "meaning": "Florence Griffith Joyner was a sprinter and is regarded the fastest woman of all time. She still holds the record for the 100m and the 200m, set at the Seoul Olympics in 1988. Lorelai is clearly upset, and Rory is going to have to move a lot quicker to get away from the wrath of Lorelai!",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 12,
+                    "subject": "Mommie Dearest",
+                    "timestamp": "33:52",
+                    "quote": "Aw, you're not gonna give me the 'Mommy Dearest' treatment forever, are ya?",
+                    "speaker": "Lorelai",
+                    "context": "Rory reluctantly helps Lorelai out at the Independence Inn. She tells Lorelai that she received her note to be at the Inn, and unenthusiastically agrees to work a shift. Lorelai notices and responds with this line",
+                    "meaning": "'Mommie Dearest' was an exposé written by Christina Crawford about her adoptive mother Joan Crawford. The memoir recounts Joan's alcoholism, as well as her manipulation and abuse of her adopted children. The allusion is a way to for Lorelai to exaggerate the drama between her and her daughter, but she ultimately fails as Rory before they are able to resolve their disagreement over Rory going to Chilton.",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 13,
+                    "subject": "The Little Match Girl",
+                    "timestamp": "34:25",
+                    "quote": "So, do we go in or do we just stand here reenacting The Little Match Girl?",
+                    "speaker": "Rory",
+                    "context": "Lorelai and Rory arrive at the Gilmore's residence for their first family dinner as part of the agreement with Emily and Richard. Lorelai hesitates before knocking on the door, implying that she is still not comfortable with accepting the financial help of her parents. Rory, cold from the snow, breaks Lorelai's thoughts with this line",
+                    "meaning": "'The Little Match Girl' is a fairy tale from famous childrens writer Hans Christian Andersen. The tale centers around a poverty-stricken girl who is ordered to sell matches or receive a beating from her father. Unable to sell the matches, she lights them to keep warm, and sees a vision that fades as the match goes out. She eventually lights all of them, and freezes to death as the matches expire. This is a neat allusion not only because Lorelai and Rory are also freezing in the cold, but because Lorelai also has a vision that is fading - that of herself being the sole provider of Rory, independent from her parents who could easily fill that role. ",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 14,
+                    "subject": "Menendez",
+                    "timestamp": "34:26",
+                    "quote": "Okay, look, I know you and me are having a thing here and I know you hate me but I need you to be civil, at least through dinner and then on the way home you can pull a Menendez. Deal?",
+                    "speaker": "Lorelai",
+                    "context": "Lorelai and Rory arrive at the Gilmore's residence for their first family dinner as part of the agreement with Emily and Richard. As Lorelai and Rory stand in front of the Gilmore's door in the cold, Lorelai acknowledges that they are fighting with this line.",
+                    "meaning": "Lyle and Erik Menendez were two brothers convicted of killing their wealthy parents with a shotgun. Here, Lorelai asks that Rory hold it together and get through dinner with her grandparents and to set aside the argument between them. It is interesting that the Menendez brothers had wealthy parents - an almost-parallel here. Rory agrees to the truce.",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                },
+                {
+                    "id": 15,
+                    "subject": "Nick at Night",
+                    "timestamp": "42:32",
+                    "quote": "Oh, that's so Nick at Night.",
+                    "speaker": "Rory",
+                    "context": "Back at Luke's, Rory and Lorelai make up, and Rory agrees to Chilton. Lorelai, now delighted, tests her luck by prodding Rory about Dean. She asks if the boy is dreamy, and Rory responds thus",
+                    "meaning": "Nick at Night is a late-night programming block on Nickelodeon featuring more nostalgic shows. Rory disapproves of Lorelai's questioning her about Dean, and dismisses it as something presumably old-fashioned or unappetizing. Also a tongue-in-cheek jab at a competing television network as the Gilmore Girls aired on the WB",
+                    "screenshot": "https://some-picture-hosting-website.com/image"
+                }
+            ]
+        },
+        {
+            "seasonNumber": "1",
+            "episodeNumber": "2",
+            "name": "",
+            "references": []
+        }
+    ],
+    "links": {
+        "first": "https://www.ourapiname.com/api/v1/season/1",
+        "prev": "https://www.ourapiname.com/api/v1/season/1",
+        "self": "https://www.ourapiname.com/api/v1/season/1",
+        "next": "https://www.ourapiname.com/api/v1/season/2",
+        "last": "https://www.ourapiname.com/api/v1/season/7"
+    },
+    "meta": {}
+}

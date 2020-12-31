@@ -1,22 +1,13 @@
 {
-  "name": "project-gg-backend",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "Backend for project-gg",
-  "main": "server.js",
+  "description": "Backend for project gg",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/trojanCohorse/project-gg-backend.git"
-  },
-  "author": "Little Einsteins",
+  "author": "Platoon Omega",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/trojanCohorse/project-gg-backend/issues"
-  },
-  "homepage": "https://github.com/trojanCohorse/project-gg-backend#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
