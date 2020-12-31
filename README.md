@@ -61,6 +61,11 @@ Here is an example:
   "screenshot": "https://some-picture-hosting-website.com/image"
 }`
 
+Too much? Swing by our website and post your reference via our form!
+
+## Website
+https://gilmoregirlsapi.netlify.app/
+
 ## Thank you!
 
 Thats it! We hope you enjoy this API, made by Asif, Boris, Caitlin, and Greg.
