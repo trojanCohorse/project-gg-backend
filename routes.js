@@ -7,7 +7,7 @@ const Episode = require('./models/episode.model');
 
 // get season at id (1-7)
 router.route('/:id').get((req, res) => {
-  Season.find({ season: req.params.id })
+  Season.findOne({ season: req.params.id })
     .then(season => res.status(200).json(season))
     .catch(err => res.status(500).json('Error: ' + err));
 })
