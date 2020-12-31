@@ -28,11 +28,11 @@ Please use this format:
 
 `
 {
-"seasonNumber": "",
+  "seasonNumber": "",
 
-"episodeNumber": "",
+  "episodeNumber": "",
 
-"references": [{}]
+  "references": [{}]
 }
 `
 
@@ -58,21 +58,24 @@ The references array
 
 Here is an example:
 
-`{
-  "subject": "Jack Kerouac",
+```{
 
-  "timestamp": "1:27",
+    "subject": "Jack Kerouac",
 
-  "quote": "You're a regular Jack Kerouac.",
+    "timestamp": "1:27",
 
-  "speaker": "Lorelai",
+    "quote": "You're a regular Jack Kerouac.",
 
-  "context": "Lorelai is approached by a stranger who flirts with her at Luke's diner. He tells her that he is just passing by Stars Hollow to Hartford, and this is Lorelai's response",
+    "speaker": "Lorelai",
 
-  "meaning": "Jack Kerouac was famous for his travels, which lead to his novel 'On The Road'.",
+    "context": "Lorelai is approached by a stranger who flirts with her at Luke's diner. He tells her that he is just passing by Stars Hollow to Hartford, and this is Lorelai's response",
 
-  "screenshot": "https://some-picture-hosting-website.com/image"
-}`
+    "meaning": "Jack Kerouac was famous for his travels, which lead to his novel 'On The Road'.",
+
+    "screenshot": "https://some-picture-hosting-website.com/image"
+
+}
+```
 
 Too much? Swing by our website and post your reference via our form!
 
