@@ -101,14 +101,14 @@ router.route('/episodes/add').post(async (req, res) => {
 // add references to episode 
 router.route('/references/add').post(async (req, res) => {
   const { seasonNumber, episodeNumber, references } = req.body;
-  const { subject, timestamp, quote, speaker, context, meaning } = references[0];
+  const { subject, timestamp, quote, speaker, context, meaning } = references;
 
   if (!seasonNumber || !episodeNumber) {
     res.status(400).json('Please provide season number and episode number');
   } else {
     const season = await Season.findOne({ season: seasonNumber });
-    const references = season.episodes.filter(item => Number(item.episodeNumber) == Number(episodeNumber))[0].references;
-    const id = references.length + 1;
+    const referencesArr = season.episodes.filter(item => Number(item.episodeNumber) == Number(episodeNumber))[0].references;
+    const id = referencesArr.length + 1;
     
     const newReference = new Reference({
       id, subject, timestamp, quote, speaker, context, meaning
