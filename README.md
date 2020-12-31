@@ -26,7 +26,7 @@ Want to help us fill out the database? We would absolutely love your input. You 
 
 Please use this format:
 
-`
+```
 {
   "seasonNumber": "",
 
@@ -34,10 +34,12 @@ Please use this format:
 
   "references": [{}]
 }
-`
+```
 
 First specify the season number and episode number in your request - this is required!
 "seasonNumber" must be between 1-7, "episodeNumber" must be a valid episode number within the specified season.
+
+--------------
 
 The references array
 "references" must be an object inside an array! Within that object, use the following keys in key/value pairs:
@@ -45,17 +47,19 @@ The references array
 
 `"subject": ""` - What is the subject matter of the reference? What are they talking about?
 
-|`"timestamp": ""` - Timestamp of quote in the episode
+`"timestamp": ""` - Timestamp of quote in the episode
 
-|`"quote": ""` - Quote that contains the reference
+`"quote": ""` - Quote that contains the reference
 
-|`"speaker": ""` - Who makes the reference?
+`"speaker": ""` - Who makes the reference?
 
-|`"context": ""` - How does the quote come up? Give a brief description
+`"context": ""` - How does the quote come up? Give a brief description
 
-|`"meaning": ""` - What does the reference mean? Why is it important here?
+`"meaning": ""` - What does the reference mean? Why is it important here?
 
-|`"screenshot": ""` - This is the bonus one! Take a screenshot of the moment the reference is made, upload it online, and provide the URL here! |
+`"screenshot": ""` - This is the bonus one! Take a screenshot of the moment the reference is made, upload it online, and provide the URL here!
+
+----------
 
 Here is an example:
 
