@@ -117,6 +117,64 @@ router.route("/episodes/add").post(async (req, res) => {
   }
 });
 
+// add post data to middle database so that admin can authenticate data
+router.route('/add').post(async (req, res) => {
+  const { seasonNumber, episodeNumber, name, references } = req.body;
+  const { subject, timestamp, quote, speaker, context, meaning } = references;
+  if (!subject || !timestamp || !quote || !speaker || !context || !meaning) {
+    res.status(400).json('Please provide reference info');
+  } else if (!seasonNumber || !episodeNumber) {
+    res.status(400).json('Please provide season number and episode number');
+  } 
+  const episode = await Episode.find({ episodeNumber: episodeNumber });
+  if (episode.length === 0) {
+    const newEpisode = new Episode({
+      seasonNumber, episodeNumber, name, references 
+    });
+
+    newEpisode.save().then(() => res.json(newEpisode));      
+  } else {
+    // not using the Reference schema, YET. We won't know what the ID is until it is added to the actual database
+    const newReference = {
+      subject: subject,
+      timestamp: timestamp,
+      quote: quote,
+      speaker: speaker,
+      context: context,
+      meaning: meaning
+    }
+    episode[0].references.push(newReference);
+
+    episode[0].save().then(() => res.json(newReference));
+  }  
+})
+
+// add references to episode 
+router.route('/references/add').post(async (req, res) => {
+  const { seasonNumber, episodeNumber } = req.body;
+  const episodeData = await Episode.findOneAndDelete({ 
+    seasonNumber: seasonNumber, 
+    episodeNumber: episodeNumber
+  });
+
+  if (!episodeData) res.status(404).json('Episode data does not exist...');
+
+  const season = await Season.findOne({ season: seasonNumber });
+
+  const oldReferencesArr = season.episodes.filter(item => Number(item.episodeNumber) == Number(episodeNumber))[0].references;
+  const id = oldReferencesArr.length + 1;
+  
+  const { subject, timestamp, quote, speaker, context, meaning } = episodeData.references[0];
+  const newReference = new Reference({
+    id, subject, timestamp, quote, speaker, context, meaning
+  });
+  season.episodes[episodeNumber-1].references.push(newReference);
+
+  episodeData.delete();
+  season.markModified('episodes');
+  season.save().then(() => res.status(201).json(newReference));
+})
+=======
 // add references to episode
 router.route("/references/add").post(async (req, res) => {
   const { seasonNumber, episodeNumber, references } = req.body;
