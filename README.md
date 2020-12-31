@@ -26,32 +26,45 @@ Want to help us fill out the database? We would absolutely love your input. You 
 
 Please use this format:
 
-`
+```
 {
-"seasonNumber": "",
-"episodeNumber": "",
+  "seasonNumber": "",
 
-"references": [{}]
+  "episodeNumber": "",
+
+  "references": [{}]
 }
-`
+```
 
 First specify the season number and episode number in your request - this is required!
 "seasonNumber" must be between 1-7, "episodeNumber" must be a valid episode number within the specified season.
 
+--------------
+
 The references array
 "references" must be an object inside an array! Within that object, use the following keys in key/value pairs:
 
+
 `"subject": ""` - What is the subject matter of the reference? What are they talking about?
+
 `"timestamp": ""` - Timestamp of quote in the episode
+
 `"quote": ""` - Quote that contains the reference
+
 `"speaker": ""` - Who makes the reference?
+
 `"context": ""` - How does the quote come up? Give a brief description
+
 `"meaning": ""` - What does the reference mean? Why is it important here?
+
 `"screenshot": ""` - This is the bonus one! Take a screenshot of the moment the reference is made, upload it online, and provide the URL here!
+
+----------
 
 Here is an example:
 
-`{
+```
+{
   "subject": "Jack Kerouac",
   "timestamp": "1:27",
   "quote": "You're a regular Jack Kerouac.",
@@ -59,7 +72,13 @@ Here is an example:
   "context": "Lorelai is approached by a stranger who flirts with her at Luke's diner. He tells her that he is just passing by Stars Hollow to Hartford, and this is Lorelai's response",
   "meaning": "Jack Kerouac was famous for his travels, which lead to his novel 'On The Road'.",
   "screenshot": "https://some-picture-hosting-website.com/image"
-}`
+}
+```
+
+Too much? Swing by our website and post your reference via our form!
+
+## Website
+https://gilmoregirlsapi.netlify.app/
 
 ## Thank you!
 
