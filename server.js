@@ -6,6 +6,7 @@ require('dotenv').config();
 
 // Creating express application
 const app = express();
+// I'm scared
 // Heroku will generate a env variable called process.env.port for our server to be hosted on
 const port = process.env.PORT || 5000;
 
