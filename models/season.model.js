@@ -4,12 +4,9 @@ const Schema = mongoose.Schema;
 
 // format data to post to the database
 const seasonSchema = new Schema({
-  // _id: { type: mongoose.Schema.Types.ObjectId },
   season: { type: Number, required: true },
   episodes: { type: Array, required: true }
-}, {
-  timestamps: true
-})
+}, { timestamps: true });
 
 const Season = mongoose.model('Season', seasonSchema);
 

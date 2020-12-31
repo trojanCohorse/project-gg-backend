@@ -19,11 +19,33 @@ connection.once('open', () => {
   console.log("MongoDB database connection established");
 });
 
-const seasonsRouter = require('./routes/seasons');
+const router = require('./routes');
 
-app.use('/seasons', seasonsRouter);
-// app.use('/',)
+app.use('/seasons', router);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
