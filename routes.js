@@ -1,13 +1,21 @@
 const router = require('express').Router();
 const Season = require('./models/season.model');
 const Episode = require('./models/episode.model');
+const Reference = require('./models/reference.model');
 // const Reference = require('./models/reference.model');
 
 //******* GET Endpoints ********/
 
+// get ALL seasons
+router.route('/').get(async (req, res) => {
+  const seasons = await Season.find()
+  
+  res.status(200).json(seasons);
+})
+
 // get season at id (1-7)
 router.route('/:id').get((req, res) => {
-  Season.findOne({ season: req.params.id })
+  Season.find({ season: req.params.id })
     .then(season => res.status(200).json(season))
     .catch(err => res.status(500).json('Error: ' + err));
 })
@@ -67,33 +75,49 @@ router.route('/:seasonId/episodes/:episodeId/references/:referenceId').get((req,
 
 //******* UPDATE Endpoints ********/
 
-// add season
-router.route('/add').post((req, res) => {
-  const { season, episodes } = req.body;
-  const newSeasonEpisode = new Season({ season , episodes });
-
-  newSeasonEpisode.save()
-    .then(() => res.json('SeasonEpisode added!'))
-    .catch(err => res.status(500).json('Error: ' + err))
-})        
-
 // add episode
-router.route('/episodes/add').put(async (req, res) => {
-  const episodeData = req.body;
-  console.log(typeof episodeData);
-  if (episodeData == {}) {
-    console.log('wrongg');
-    res.status(400).json('Please provide episode');
-  } 
-  // const season = await Season.findOne({ season: req.params.id });
-
-  // const seasonNumber = episodeData
-  // const newEpisode = new Episode({ 
+router.route('/episodes/add').post(async (req, res) => {
+  const { seasonNumber, episodeNumber, name } = req.body;
+  
+  if (!seasonNumber || !episodeNumber) {
+    res.status(400).json('Please provide episode data');
+  } else {
+    const season = await Season.findOne({ season: seasonNumber });
+    const references = req.body.references || [];
     
-  // })
-  // season.episodes.push(newEpisode);
-  // // const updated = await season.save();
-  // res.json('updated');
+    if (season.episodes.filter(item => Number(item.episodeNumber) == Number(episodeNumber)).length > 0) {
+      res.status(400).json('Episode already exists!');
+    } else {
+      const newEpisode = new Episode({ 
+        seasonNumber, episodeNumber, name, references  
+      });
+      season.episodes.push(newEpisode);
+      
+      season.save().then(() => res.status(200).json(newEpisode));    
+    }
+  }
+})
+
+// add references to episode 
+router.route('/references/add').post(async (req, res) => {
+  const { seasonNumber, episodeNumber, references } = req.body;
+  const { subject, timestamp, quote, speaker, context, meaning } = references[0];
+
+  if (!seasonNumber || !episodeNumber) {
+    res.status(400).json('Please provide season number and episode number');
+  } else {
+    const season = await Season.findOne({ season: seasonNumber });
+    const references = season.episodes.filter(item => Number(item.episodeNumber) == Number(episodeNumber))[0].references;
+    const id = references.length + 1;
+    
+    const newReference = new Reference({
+      id, subject, timestamp, quote, speaker, context, meaning
+    });
+    season.episodes[episodeNumber-1].references.push(newReference);
+
+    season.markModified('episodes');
+    season.save().then(() => res.status(201).json(newReference));
+  }
 })
 
 // dummy data for post on episode:
@@ -104,15 +128,14 @@ router.route('/episodes/add').put(async (req, res) => {
 //   "references": []
 // }
 
-
 module.exports = router;
 
-// const router = require('express').Router();
-// let Exercise = require('../models/exercise.model');
+// add season (no longer needed)
+// router.route('/add').post((req, res) => {
+//   const { season, episodes } = req.body;
+//   const newSeason = new Season({ season , episodes });
 
-// router.route('/').get((req, res) => {
-//   Exercise.find()
-//     .then(exercises => res.json(exercises))
-//     .catch(err => res.status(400).json('Error: ' + err));
-// });
-
+//   newSeason.save()
+//     .then(() => res.status(200).json('Season added!'))
+//     .catch(err => res.status(500).json('Error: ' + err))
+// })        
