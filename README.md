@@ -51,7 +51,15 @@ The references array
 
 Here is an example:
 
-`{ "subject": "Jack Kerouac", "timestamp": "1:27", "quote": "You're a regular Jack Kerouac.", "speaker": "Lorelai", "context": "Lorelai is approached by a stranger who flirts with her at Luke's diner. He tells her that he is just passing by Stars Hollow to Hartford, and this is Lorelai's response", "meaning": "Jack Kerouac was famous for his travels, which lead to his novel 'On The Road'.", "screenshot": "https://some-picture-hosting-website.com/image" }`
+`{
+  "subject": "Jack Kerouac",
+  "timestamp": "1:27",
+  "quote": "You're a regular Jack Kerouac.",
+  "speaker": "Lorelai",
+  "context": "Lorelai is approached by a stranger who flirts with her at Luke's diner. He tells her that he is just passing by Stars Hollow to Hartford, and this is Lorelai's response",
+  "meaning": "Jack Kerouac was famous for his travels, which lead to his novel 'On The Road'.",
+  "screenshot": "https://some-picture-hosting-website.com/image"
+}`
 
 ## Thank you!
 
