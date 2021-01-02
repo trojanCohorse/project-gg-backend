@@ -102,11 +102,13 @@ router.route('/episodes/add').post(async (req, res) => {
 router.route('/add').post(async (req, res) => {
   const { seasonNumber, episodeNumber, name, references } = req.body;
   const { subject, timestamp, quote, speaker, context, meaning } = references;
+
   if (!subject || !timestamp || !quote || !speaker || !context || !meaning) {
     res.status(400).json('Please provide reference info');
   } else if (!seasonNumber || !episodeNumber) {
     res.status(400).json('Please provide season number and episode number');
   } 
+  
   const episode = await Episode.find({ episodeNumber: episodeNumber });
   if (episode.length === 0) {
     const newEpisode = new Episode({
