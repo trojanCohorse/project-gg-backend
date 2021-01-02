@@ -174,7 +174,7 @@ router.route('/references/add').post(async (req, res) => {
   season.markModified('episodes');
   season.save().then(() => res.status(201).json(newReference));
 })
-=======
+// =======
 // add references to episode
 router.route("/references/add").post(async (req, res) => {
   const { seasonNumber, episodeNumber, references } = req.body;
