@@ -9,8 +9,14 @@ const Reference = require("./models/reference.model");
 // get ALL seasons
 router.route("/").get(async (req, res) => {
   const seasons = await Season.find();
-
   res.status(200).json(seasons);
+});
+
+// approve new references
+router.route("/approve").get(async (req, res) => {
+  const episodes = await Episode.find();
+  console.log(episodes);
+  res.status(200).json(episodes);
 });
 
 // get season at id (1-7)
@@ -146,7 +152,7 @@ router.route('/add').post(async (req, res) => {
     episode[0].references.push(newReference);
 
     episode[0].save().then(() => res.json(newReference));
-  }  
+  }
 })
 
 // add references to episode 
@@ -174,7 +180,7 @@ router.route('/references/add').post(async (req, res) => {
   season.markModified('episodes');
   season.save().then(() => res.status(201).json(newReference));
 })
-=======
+
 // add references to episode
 router.route("/references/add").post(async (req, res) => {
   const { seasonNumber, episodeNumber, references } = req.body;
