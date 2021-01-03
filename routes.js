@@ -125,7 +125,7 @@ router.route("/episodes/add").post(async (req, res) => {
 
 // add post data to middle database so that admin can authenticate data
 router.route('/add').post(async (req, res) => {
-  const { seasonNumber, episodeNumber, name, references } = req.body;
+  const { seasonNumber, episodeNumber, references } = req.body;
   const { subject, timestamp, quote, speaker, context, meaning } = references;
 
   if (!subject || !timestamp || !quote || !speaker || !context || !meaning) {
@@ -135,12 +135,14 @@ router.route('/add').post(async (req, res) => {
   } 
   
   const episode = await Episode.find({ episodeNumber: episodeNumber });
+  console.log(episode);
   if (episode.length === 0) {
     const newEpisode = new Episode({
-      seasonNumber, episodeNumber, name, references 
+      seasonNumber, episodeNumber, references 
     });
-
-    newEpisode.save().then(() => res.json(newEpisode));      
+    newEpisode.save()
+      .then(() => res.json(newEpisode))
+      .catch(err => res.status(500).json('Error: ' + err));    
   } else {
     // not using the Reference schema, YET. We won't know what the ID is until it is added to the actual database
     const newReference = {
@@ -153,7 +155,9 @@ router.route('/add').post(async (req, res) => {
     }
     episode[0].references.push(newReference);
 
-    episode[0].save().then(() => res.json(newReference));
+    episode[0].save()
+      .then(() => res.json(newReference))
+      .catch(err => res.status(500).json('Error: ' + err));
   }
 })
 
@@ -229,6 +233,22 @@ module.exports = router;
 //   const newSeason = new Season({ season , episodes });
 
 //   newSeason.save()
-//     .then(() => res.status(200).json('Season added!'))
+//     .then(() => res.status(201).json('Season added!'))
 //     .catch(err => res.status(500).json('Error: ' + err))
 // })
+
+  // const newEpisode = new Episode({
+  //     seasonNumber, episodeNumber, name, references 
+  //   });
+
+  // newEpisode.save()
+  //   .then(() => res.json(newEpisode))
+  //   .catch(err => res.status(500).json('Error: ' + err));
+
+
+
+  // const newSeason = new Season({ season , episodes });
+
+  // newSeason.save()
+  //   .then(() => res.status(201).json('Season added!'))
+  //   .catch(err => res.status(500).json('Error: ' + err))
