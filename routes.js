@@ -128,6 +128,10 @@ router.route('/add').post(async (req, res) => {
   const { seasonNumber, episodeNumber, name, references } = req.body;
   const { subject, timestamp, quote, speaker, context, meaning } = references;
 
+  res.status(500).json('TESTING BRO WHY  WHGY');
+
+  // res.status(200).json('working.');
+
   if (!subject || !timestamp || !quote || !speaker || !context || !meaning) {
     res.status(400).json('Please provide reference info');
   } else if (!seasonNumber || !episodeNumber) {
