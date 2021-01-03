@@ -22,7 +22,7 @@ References can be requested by all references in the series, in the season, and 
 
 Want to help us fill out the database? We would absolutely love your input. You can post to this endpoint:
 
-`seasons/references/add`
+`seasons/add`
 
 Please use this format:
 
