@@ -1,3 +1,4 @@
+const router = require("express").Router();
 const Episode = require("./models/episode.model");
 
 router.route('/add').post(async (req, res) => {
@@ -34,7 +35,7 @@ router.route('/add').post(async (req, res) => {
 })
 
 // const router = require("express").Router();
-// const Season = require("./models/season.model");
+const Season = require("./models/season.model");
 // const Episode = require("./models/episode.model");
 // const Reference = require("./models/reference.model");
 // // const Reference = require('./models/reference.model');
@@ -54,12 +55,12 @@ router.route('/add').post(async (req, res) => {
 //   res.status(200).json(episodes);
 // });
 
-// // get season at id (1-7)
-// router.route("/:id").get((req, res) => {
-//   Season.find({ season: req.params.id })
-//     .then((season) => res.status(200).json(season))
-//     .catch((err) => res.status(500).json("Error: " + err));
-// });
+// get season at id (1-7)
+router.route("/:id").get((req, res) => {
+  Season.find({ season: req.params.id })
+    .then((season) => res.status(200).json(season))
+    .catch((err) => res.status(500).json("Error: " + err));
+});
 
 // // get episodes from a season
 // router.route("/:id/episodes").get((req, res) => {
