@@ -46,6 +46,22 @@ router.route("/approve/:seasonNum/:epNum")
   res.status(200).json(putRequest);
 })
 
+router.route("/approve/like/:seasonNum/:epNum").patch(async (req, res) => {
+  const {seasonNum, epNum} = req.params;
+  const refIdentifer = req.body.references.subject;
+  const newVote = req.body.newVote;
+
+  const patchRequest = await Episode.findOneAndUpdate(
+    {
+      seasonNumber: seasonNum,
+      episodeNumber: epNum,
+      "references.subject": refIdentifer
+    },
+    { $set: { "references.$.votes" : newVote } }
+  )
+  res.status(200).json(patchRequest);
+})
+
 // "seasonNumber": "1",
 //             "episodeNumber": "1",
 //             "name": "Pilot",
@@ -196,7 +212,8 @@ router.route('/add').post(async (req, res) => {
       quote: quote,
       speaker: speaker,
       context: context,
-      meaning: meaning
+      meaning: meaning,
+      votes: 0
     }
     episode[0].references.push(newReference);
 
@@ -231,36 +248,6 @@ router.route('/references/add').post(async (req, res) => {
   season.markModified('episodes');
   season.save().then(() => res.status(201).json(newReference));
 })
-
-// add references to episode
-router.route("/references/add").post(async (req, res) => {
-  const { seasonNumber, episodeNumber, references } = req.body;
-  const { subject, timestamp, quote, speaker, context, meaning } = references;
-
-  if (!seasonNumber || !episodeNumber) {
-    res.status(400).json("Please provide season number and episode number");
-  } else {
-    const season = await Season.findOne({ season: seasonNumber });
-    const referencesArr = season.episodes.filter(
-      (item) => Number(item.episodeNumber) == Number(episodeNumber)
-    )[0].references;
-    const id = referencesArr.length + 1;
-
-    const newReference = new Reference({
-      id,
-      subject,
-      timestamp,
-      quote,
-      speaker,
-      context,
-      meaning,
-    });
-    season.episodes[episodeNumber - 1].references.push(newReference);
-
-    season.markModified("episodes");
-    season.save().then(() => res.status(201).json(newReference));
-  }
-});
 
 // dummy data for post on episode:
 // {
