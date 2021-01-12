@@ -6,8 +6,9 @@ const Schema = mongoose.Schema;
 const episodeSchema = new Schema({
   seasonNumber: { type: Number, required: true },
   episodeNumber: { type: Number, required: true, },
-  references: { type: Array, required: true },
+  references: { type: Array, required: true }
 }, { timestamps: true });
+
 
 const Episode = mongoose.model('Episode', episodeSchema);
 

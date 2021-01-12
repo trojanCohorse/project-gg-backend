@@ -10,7 +10,8 @@ const referenceSchema = new Schema({
   speaker: { type: String, required: true },
   context: { type: String, required: true },
   meaning: { type: String, required: true },
-  screenshot: { type: String }
+  screenshot: { type: String },
+  votes: { type: Number, required: true, default: 0 }
 }, { timestamps: true });
 
 const Reference = mongoose.model('Reference', referenceSchema);

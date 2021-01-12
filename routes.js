@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Season = require("./models/season.model");
 const Episode = require("./models/episode.model");
 const Reference = require("./models/reference.model");
+
 // const Reference = require('./models/reference.model');
 
 //******* GET Endpoints ********/
@@ -13,11 +14,55 @@ router.route("/").get(async (req, res) => {
 });
 
 // approve new references
-router.route("/approve").get(async (req, res) => {
+router.route("/approve")
+.get(async (req, res) => {
   const episodes = await Episode.find();
-  console.log(episodes);
   res.status(200).json(episodes);
-});
+})
+
+router.route("/approve/:seasonNum/:epNum")
+.delete(async (req, res) => {
+  const {seasonNum, epNum} = req.params
+  const testEpisodes = await Episode.findOneAndDelete({ 
+    seasonNumber: seasonNum,
+    episodeNumber: epNum 
+  })
+  
+  res.status(200).json(testEpisodes)
+})
+.patch(async (req, res) => {
+  const {seasonNum, epNum} = req.params;
+  const editedRef = req.body.references.quote;
+  const refIdentifer = req.body.references.subject;
+
+  const putRequest = await Episode.findOneAndUpdate(
+    {
+      seasonNumber: seasonNum,
+      episodeNumber: epNum,
+      "references.quote": refIdentifer
+    },
+    { $set: { "references.$.quote" : editedRef } }
+  )
+  res.status(200).json(putRequest);
+})
+
+// "seasonNumber": "1",
+//             "episodeNumber": "1",
+//             "name": "Pilot",
+//             "references": [
+//                 {
+//                     "id": 1,
+//                     "subject": "Jack Kerouac",
+//                     "timestamp": "1:27",
+//                     "quote": "You're a regular Jack Kerouac.",
+//                     "speaker": "Lorelai",
+//                     "context": "Lorelai is approached by a stranger who flirts with her at Luke's diner. He tells her that he is just passing by Stars Hollow to Hartford, and this is Lorelai's response",
+//                     "meaning": "Jack Kerouac was famous for his travels, which lead to his novel 'On The Road'.",
+//                     "screenshot": "https://some-picture-hosting-website.com/image"
+//                 },
+
+
+
 
 // get season at id (1-7)
 router.route("/:id").get((req, res) => {
@@ -89,7 +134,7 @@ router
         res.status(200).json(reference);
       })
       .catch((err) => res.status(500).json("Error: " + err));
-  });
+  })
 
 //******* UPDATE Endpoints ********/
 
@@ -123,7 +168,7 @@ router.route("/episodes/add").post(async (req, res) => {
   }
 });
 
-// add post data to middle database so that admin can authenticate data
+// add post data to episodes so that admin can authenticate data
 router.route('/add').post(async (req, res) => {
   const { seasonNumber, episodeNumber, references } = req.body;
   const { subject, timestamp, quote, speaker, context, meaning } = references;
@@ -134,8 +179,8 @@ router.route('/add').post(async (req, res) => {
     res.status(400).json('Please provide season number and episode number');
   } 
   
-  const episode = await Episode.find({ episodeNumber: episodeNumber });
-  console.log(episode);
+  const episode = await Episode.find({ seasonNumber: seasonNumber, episodeNumber: episodeNumber });
+
   if (episode.length === 0) {
     const newEpisode = new Episode({
       seasonNumber, episodeNumber, references 
