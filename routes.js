@@ -30,7 +30,7 @@ router.route("/approve/:seasonNum/:epNum")
   
   res.status(200).json(testEpisodes)
 })
-.patch(async (req, res) => {
+.put(async (req, res) => {
   const {seasonNum, epNum} = req.params;
   const editedRef = req.body.references.quote;
   const refIdentifer = req.body.references.subject;
@@ -39,7 +39,7 @@ router.route("/approve/:seasonNum/:epNum")
     {
       seasonNumber: seasonNum,
       episodeNumber: epNum,
-      "references.quote": refIdentifer
+      "references.subject": refIdentifer
     },
     { $set: { "references.$.quote" : editedRef } }
   )
