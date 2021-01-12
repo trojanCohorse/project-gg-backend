@@ -198,6 +198,7 @@ router.route('/add').post(async (req, res) => {
   const episode = await Episode.find({ seasonNumber: seasonNumber, episodeNumber: episodeNumber });
 
   if (episode.length === 0) {
+    references.votes = 0;
     const newEpisode = new Episode({
       seasonNumber, episodeNumber, references 
     });
